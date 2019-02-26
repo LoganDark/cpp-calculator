@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="UTF-8">
+		<title>Calculator</title>
+		<meta name="viewport" content="width=device-width, initial-scale=1">
+		<link href="tailwind.min.css" rel="stylesheet">
+		<link href="style.css" rel="stylesheet">
+	</head>
+	<body
+		class="flex h-screen bg-blue-darkest text-white font-mono leading-none">
+		<main class="w-1/2 md:w-3/4 flex flex-col">
+			<section
+				class="flex-0 h-full overflow-auto p-1 pb-2 flex flex-col items-stretch"
+				id="history">
+				<div
+					class="flex-col border-4 border-t-0 border-blue-darker mx-1 p-1 hidden"
+					style="min-height:min-content"></div>
+				<div
+					class="flex-col border-b-4 border-l-4 border-r-4 border-blue-darker m-1 p-1 pt-0 flex-0 hidden"
+					style="min-height:min-content">
+					<div
+						class="flex-0 text-xs p-1 bg-blue-darker flex flex-col md:flex-row items-center -mx-1 mb-1 md:pr-0">
+						<strong class="m-1">Input</strong>
+						<div class="md:flex-grow"></div>
+						<button
+							class="flex-0 text-white block p-1 bg-blue-darkest focus:outline-none focus:shadow-outline leading-none m-1 hidden text-xs w-full md:w-auto">
+							Button
+						</button>
+					</div>
+				</div>
+				<div
+					class="flex flex-col md:flex-row py-1 border-b-4 border-blue-darker pb-2 mx-1"
+					style="min-height:min-content">
+					<p class="mr-2 leading-normal flex-grow text-sm md:text-base">
+						Welcome to my calculator! Try running
+						<strong>:help</strong>
+						for help.
+					</p>
+					<button
+						class="flex-0 text-white block p-1 bg-blue-darker focus:outline-none focus:shadow-outline leading-none md:ml-2 text-xs mt-2 md:mt-auto md:mb-auto whitespace-no-wrap">
+						Clear history
+					</button>
+				</div>
+			</section>
+			<div class="flex-0">
+				<div
+					class="block p-2 text-xs bg-blue-darker flex flex-col md:flex-row">
+					<strong
+						class="flex-0 text-center md:text-left">Expression</strong>
+					<div class="md:flex-grow"></div>
+					<span
+						class="flex-0 text-center md:text-left mt-2 md:mt-0 hidden"
+						id="error-msg">This is an error</span>
+				</div>
+				<div class="flex">
+					<div
+						class="pl-2 flex-0 text-blue text-xl h-8 overflow-hidden"
+						style="line-height: 2.5rem;">
+						&gt;
+					</div>
+					<div
+						class="p-2 focus:outline-none flex-grow leading-normal whitespace-pre-wrap overflow-auto"
+						style="width:0;max-height:50vh;user-modify:read-write-plaintext-only;-webkit-user-modify:read-write-plaintext-only;-moz-user-modify:read-write-plaintext-only"
+						contenteditable="true"
+						id="input"></div>
+				</div>
+			</div>
+		</main>
+		<aside class="flex-grow flex flex-col border-l-4 border-blue-darker"
+		       style="width:0">
+			<section class="flex-grow flex flex-col">
+				<strong
+					class="flex-0 block p-2 text-xs bg-blue-darker text-center md:text-left">
+					Variables
+				</strong>
+				<ul class="overflow-auto list-reset text-sm py-1 h-full flex-grow"
+				    id="vars">
+					<li class="px-2 leading-normal">
+						<span class="text-yellow cursor-pointer"
+						      title="Click to insert variable">_</span><span
+						class="text-grey-dark">: </span><span
+						class="text-grey-dark">(no previous result)</span>
+					</li>
+				</ul>
+			</section>
+		</aside>
+		<div class="absolute pin flex p-4 overflow-auto" id="dialog">
+			<div class="bg-blue-darkest opacity-75 fixed pin"></div>
+			<div
+				class="border-4 border-blue-darker m-auto bg-blue-darkest flex flex-col relative">
+				<strong
+					class="flex-0 block p-2 bg-blue-darker text-center">Error</strong>
+				<p class="m-2 flex-0 leading-normal">
+					Please enable JavaScript to use this calculator.
+				</p>
+				<button
+					class="flex-0 text-white block p-1 m-2 mt-0 ml-auto bg-blue-darker text-sm focus:outline-none focus:shadow-outline hidden"
+					style="min-width:4rem">
+					Okay
+				</button>
+			</div>
+		</div>
+		<script type="text/javascript">
+			document.getElementById('dialog')
+				.lastElementChild
+				.firstElementChild
+				.innerText = 'Notice'
+
+			document.getElementById('dialog')
+				.lastElementChild
+				.lastElementChild
+				.previousElementSibling
+				.innerText = 'Please wait for a few seconds while the calculator loads...'
+		</script>
+		<script type="text/javascript" src="main.js"></script>
+		<script type="text/javascript" src="calc.js"></script>
+	</body>
+</html>

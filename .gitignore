@@ -1,0 +1,7 @@
+cmake-build-debug/
+.idea/
+
+emscripten/calc.js
+emscripten/calc.wasm
+emscripten/calc.wasm.map
+emscripten/calc.wast
