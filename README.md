@@ -69,3 +69,5 @@ Some help with this would be greatly appreciated.
 Also, prediction isn't a thing. `x = 5; x + 5` in the web interface doesn't work if `x` isn't already defined.
 This could be solved by sending the whole stream of commands to the calculator and adding onto the predictive functionality.
 Possibly some kind of context that's per-prediction?
+
+Also, unary operators don't have a precedence. `-3^2` returns `9` and not `-9`.
