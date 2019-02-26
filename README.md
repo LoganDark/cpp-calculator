@@ -19,7 +19,7 @@ git submodule update
 cd ..
 ```
 
-Edit `../CMakeLists.txt` to point to the correct `em++`.
+Edit `CMakeLists.txt` to point to the correct `em++`.
 
 ### How to build it without CLion
 
