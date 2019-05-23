@@ -541,6 +541,12 @@ function setup_input(input, calc, err, update_vars) {
 	let errored = false
 
 	document.body.addEventListener('keydown', function(e) {
+		if (dialogs === 0 && !e.ctrlKey && !e.metaKey) {
+			input.focus()
+		}
+	})
+
+	document.body.addEventListener('paste', function() {
 		if (dialogs === 0) {
 			input.focus()
 		}
