@@ -399,21 +399,6 @@ function setup_vars(elem, calc, input) {
 	const var_ = /** @type {HTMLElement} */ new_item('_', '')
 
 	/**
-	 * Copies `val` to the clipboard. Only works inside user input events.
-	 *
-	 * @param val {string} What to copy
-	 */
-	function copy_to_clipboard(val) {
-		const temp = document.createElement('input')
-		temp.style.opacity = '0'
-		document.body.appendChild(temp)
-		temp.value = val
-		temp.select()
-		document.execCommand('copy')
-		temp.remove()
-	}
-
-	/**
 	 * @param val {string}
 	 * @returns {HTMLElement}
 	 */
@@ -422,13 +407,6 @@ function setup_vars(elem, calc, input) {
 		container.innerHTML = val
 			.replace(/[.,\/]/g, '<span class="text-grey-dark">$&</span>')
 			.replace(/\(([^)]+)\)/, '<span class="border-t border-white">$1</span>')
-		container.setAttribute('title', 'Click to copy value')
-		container.addEventListener('click', function(e) {
-			copy_to_clipboard(val)
-
-			e.preventDefault()
-			return false
-		})
 
 		return container
 	}
