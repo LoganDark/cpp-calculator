@@ -4,8 +4,6 @@ Hey, so this is my custom calculator that I wrote a few months ago.
 
 If you want to build this, you'll need CMake and Emscripten (and a modification to [CMakeLists.txt](https://github.com/LoganDark/cpp-calculator/blob/master/CMakeLists.txt#L11)). If you want to work on this, you'll need CLion.
 
-**There's a hosted version [here](https://logandark.net/calc/), so feel free to try it out! No download needed!**
-
 ## How to clone it
 
 Run these commands:
