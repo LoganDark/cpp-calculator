@@ -360,8 +360,10 @@ template <class Num>
 			return false;
 		}
 
-		return !after_value() &&
-		       (tokens.back().type & (TK_OPERATOR | TK_OPAREN)) > 0;
+		return !after_value() && (
+			                         tokens.back().type &
+			                         (TK_OPERATOR | TK_OPAREN | TK_FOPAREN)
+		                         ) > 0;
 	}
 
 template <class Num>
