@@ -12,7 +12,7 @@ add_custom_target(
 			--bind -std=c++14 -o emscripten/calc.js -s ENVIRONMENT=web
 			#-Oz
 			-s DISABLE_EXCEPTION_CATCHING=0
-			-s ALLOW_MEMORY_GROWTH=1
+			-s TOTAL_MEMORY=268435456 # 256 MB
 			#-g4
 			emscripten/emscripten.cpp
 	SOURCES emscripten/emscripten.cpp

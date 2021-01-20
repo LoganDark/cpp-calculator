@@ -775,7 +775,15 @@ function setup_input(input, calc, err, update_vars) {
 				return escape_str(text)
 			}
 		} catch (e) {
-			set_err(err, e.get_msg())
+			if (e.get_msg) {
+				set_err(err, e.get_msg())
+			} else {
+				set_err(err, 'Computation failed: ' + e.toString())
+
+				return '<span class="text-red underline">' +
+				       escape_str(text) +
+				       '</span>'
+			}
 
 			if (!command && !got_tokens) {
 				tokens = vector_to_array(calc.last_tokens)
