@@ -1,18 +1,4 @@
 /**
- * Mr. Rausch,
- *
- * I hope you know what you got yourself into when you asked for me to write a
- * calculator.
- *
- * Sorry there are so many tabs, Repl.it doesn't handle big projects very
- * well. I also didn't want to condense it all into one file because readability
- * :P
- *
- * Also, I think you'll be interested in `:debug ast on`. It shows the pretty
- * abstract syntax tree that got evaluated. :>
- *
- * Enjoy :)
- *
  * Test cases (where the AST is very pretty! Feel free to use `:debug ast on`):
  *
  * 10(4)-2(4^2/4)/2/(1/2)+9 = 41
@@ -37,10 +23,6 @@
  * http://www.math-aids.com/cgi/pdf_viewer_7.cgi?script_name=OoO_adv.pl&skill=1&type=4&parity=2&language=0&memo=&answer=1&x=110&y=40
  *
  * Source for the last one: this very calculator, and WolframAlpha
- *
- * Oh, by the way - I find it funny that you list functions in the requirements,
- * since you haven't even taught the class how. But hey, whatever floats your
- * boat - or in this case, calculator. :>
  */
 
 #define LD_USE_TERMCOLOR
