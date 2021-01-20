@@ -40,6 +40,12 @@ window.Module = {
  * this is called by calc.js
  */
 function after_init() {
+	window.abortDecorators.push(
+		function(output, what) {
+			return 'Aborted: ' + what
+		}
+	)
+
 	token_colors[Module.TokenType.UNKNOWN.value] = ''
 	token_colors[Module.TokenType.NUMBER.value] = 'text-purple'
 	token_colors[Module.TokenType.OPERATOR.value] = 'text-grey'
